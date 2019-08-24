@@ -3,6 +3,10 @@
     <string name="desired_leaguebg">Desired_leaguebg</string>
     <string name="swoosh_logo">swoosh_logo</string>
     <string name="desired_league">Desired League</string>
+    <string name="Beginner">Beginner</string>
+    <string name="Baller">Baller</string>
+    <string name="Finish">Finish</string>
+    <string name="I_am_a">I am a</string>
     <string name="next">NEXT</string>
     <!--string name="co_ed">Co-Ed</string-->
     <string name="women_s">Women\'s</string>
@@ -17,4 +21,5 @@
     </string>
     <string name="get_started">Get Started</string>
     <string name="welcomescreenbg">welcomescreenbg</string>
+    <string name="skillbg">skillbg</string>
 </resources>
