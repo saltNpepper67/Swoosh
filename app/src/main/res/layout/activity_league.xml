@@ -49,23 +49,24 @@
         <ToggleButton
                 android:text="@string/mens"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/toggleButton1" android:textOff="@string/mens"
+                android:layout_height="wrap_content" android:id="@+id/mensLeagueBtn" android:textOff="@string/mens"
                 android:textOn="@string/mens" android:background="@drawable/swoosh_toggle"
                 android:textColor="@color/colorAccent" android:layout_marginBottom="16dp" android:textStyle="bold"
-                android:fontFamily="@font/montserrat"/>
+                android:fontFamily="@font/montserrat" android:onClick="onMensClicked"/>
         <ToggleButton
                 android:text="@string/women_s"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/toggleButton2" android:textOff="@string/women_s"
+                android:layout_height="wrap_content" android:id="@+id/womensLeagueBtn" android:textOff="@string/women_s"
                 android:textOn="@string/women_s" android:background="@drawable/swoosh_toggle"
                 android:textColor="@color/colorAccent" android:layout_marginBottom="16dp"
-                android:fontFamily="@font/montserrat" android:textStyle="bold"/>
+                android:fontFamily="@font/montserrat" android:textStyle="bold" android:onClick="onWomensClicked"/>
         <ToggleButton
                 android:text="@string/co_ed"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/toggleButton3" android:textOff="@string/co_ed"
+                android:layout_height="wrap_content" android:id="@+id/coedLeagueBtn" android:textOff="@string/co_ed"
                 android:textOn="@string/co_ed" android:background="@drawable/swoosh_toggle"
-                android:textColor="@color/colorAccent" android:fontFamily="@font/montserrat" android:textStyle="bold"/>
+                android:textColor="@color/colorAccent" android:fontFamily="@font/montserrat" android:textStyle="bold"
+                android:onClick="onCoedClicked"/>
     </LinearLayout>
     <Button
             android:text="@string/next"
