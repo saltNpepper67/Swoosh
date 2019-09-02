@@ -16,14 +16,14 @@ class SkillActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
         ///below is the catcher of the putextra thrown from the league activity
-        player = intent.getParcelableExtra<Player>(LEAGUE_PLAYER)
+        player = intent.getParcelableExtra(LEAGUE_PLAYER)
     }
 
     fun onSkillFinishClicked(view: View){
         if (player.skill != ""){
             val finishActivity = Intent(this,FinishActivity::class.java )
             /// below line will 2 intent variables fronm this activity and the catched intent from previous activity to be thrown to "Finish Activity"
-            finishActivity.putExtra(LEAGUE_PLAYER, player) /// forward to finishActivity the value of variable skill
+            finishActivity.putExtra(LEAGUE_PLAYER, player) /// the putExtra type is a Parcelable/String type
             startActivity(finishActivity)
         } else {
             Toast.makeText(this, "Please click any of the skill requirement...",Toast.LENGTH_SHORT).show()
@@ -38,7 +38,7 @@ class SkillActivity : BaseActivity() {
     }
     fun onSkillBallerClicked(view: View) {
         beginnerSkillBtn.isChecked = false
-        player.league = "Baller"
+        player.skill = "Baller"
 
     }
 
