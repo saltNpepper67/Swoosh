@@ -4,29 +4,26 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.example.swoosh.Utilities.LEAGUE_CHOSEN
+import com.example.swoosh.Model.Player
 import com.example.swoosh.R
-import com.example.swoosh.Utilities.LEAGUE_SKILL
+import com.example.swoosh.Utilities.LEAGUE_PLAYER
 import kotlinx.android.synthetic.main.activity_skill.*
 
 class SkillActivity : BaseActivity() {
 
-    var leagueChosen = ""
-    var skill = ""
+    lateinit var player : Player
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_skill)
         ///below is the catcher of the putextra thrown from the league activity
-        leagueChosen = intent.getStringExtra(LEAGUE_CHOSEN)
-        Toast.makeText(this, "${leagueChosen}", Toast.LENGTH_SHORT).show()
+        player = intent.getParcelableExtra<Player>(LEAGUE_PLAYER)
     }
 
     fun onSkillFinishClicked(view: View){
-        if (skill != ""){
+        if (player.skill != ""){
             val finishActivity = Intent(this,FinishActivity::class.java )
             /// below line will 2 intent variables fronm this activity and the catched intent from previous activity to be thrown to "Finish Activity"
-            finishActivity.putExtra(LEAGUE_SKILL, skill)
-            finishActivity.putExtra(LEAGUE_CHOSEN, leagueChosen)
+            finishActivity.putExtra(LEAGUE_PLAYER, player) /// forward to finishActivity the value of variable skill
             startActivity(finishActivity)
         } else {
             Toast.makeText(this, "Please click any of the skill requirement...",Toast.LENGTH_SHORT).show()
@@ -37,11 +34,11 @@ class SkillActivity : BaseActivity() {
 
     fun onSkillBeginnerClicked(view: View) {
         ballerSkillBtn.isChecked = false
-        skill = "Beginner"
+        player.skill = "Beginner"
     }
     fun onSkillBallerClicked(view: View) {
         beginnerSkillBtn.isChecked = false
-        skill = "Baller"
+        player.league = "Baller"
 
     }
 
