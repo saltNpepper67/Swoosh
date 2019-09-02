@@ -5,7 +5,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".SkillActivity">
+        tools:context=".Controller.SkillActivity">
     <ImageView
             android:layout_width="0dp"
             android:layout_height="0dp" app:srcCompat="@drawable/beginnerballerbg"
@@ -41,33 +41,59 @@
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp">
-        <ToggleButton
-                android:text="@string/Beginner"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/toggleBeginner" android:textOff="@string/Beginner"
-                android:textOn="@string/mens" android:background="@drawable/swoosh_toggle"
-                android:textColor="@color/colorAccent" android:layout_marginBottom="16dp" android:textStyle="bold"
-                android:fontFamily="@font/montserrat" android:layout_marginRight="20dp"
-                android:layout_marginEnd="20dp"/>
 
         <ToggleButton
-                android:text="@string/Baller"
+                android:id="@+id/beginnerSkillBtn"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" android:id="@+id/toggleBaller" android:textOff="@string/Baller"
-                android:textOn="@string/mens" android:background="@drawable/swoosh_toggle"
-                android:textColor="@color/colorAccent" android:layout_marginBottom="16dp" android:textStyle="bold"
-                android:fontFamily="@font/montserrat" android:layout_marginLeft="20dp"
-                android:layout_marginStart="20dp" android:foregroundGravity="center_vertical"/>
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/swoosh_toggle"
+                android:fontFamily="@font/montserrat"
+                android:onClick="onSkillBeginnerClicked"
+                android:text="@string/Beginner"
+                android:textColor="@color/colorAccent"
+                android:textOff="@string/Beginner"
+                android:textOn="@string/Beginner"
+                android:textStyle="bold" />
+
+        <ToggleButton
+                android:id="@+id/ballerSkillBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/swoosh_toggle"
+                android:fontFamily="@font/montserrat"
+                android:foregroundGravity="center_vertical"
+                android:onClick="onSkillBallerClicked"
+                android:text="@string/Baller"
+                android:textColor="@color/colorAccent"
+                android:textOff="@string/Baller"
+                android:textOn="@string/Baller"
+                android:textStyle="bold" />
     </LinearLayout>
+
     <Button
-            android:text="@string/Finish"
+            android:id="@+id/skillFinishBtn"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:id="@+id/skillBtnFinish" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" android:background="@drawable/swoosh_button"
-            android:textColor="@color/colorAccent" android:fontFamily="@font/montserrat" android:textStyle="bold"
-            android:textSize="18sp"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/swoosh_button"
+            android:fontFamily="@font/montserrat"
+            android:onClick="onSkillFinishClicked"
+            android:text="@string/Finish"
+            android:textColor="@color/colorAccent"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
